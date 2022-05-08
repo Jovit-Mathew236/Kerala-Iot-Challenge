@@ -9,6 +9,10 @@
 ### Experiment 1 - Hello World LED Blinking
 
 ![Hello World LED Blinking](assets/images/exp1.png)
+
+### Snapshots
+
+![Hello World LED Blinking](assets/simulation/exp1.jpg)
 #### Code
 ```ino
 int ledPin = 10; // define digital pin 10.
@@ -28,6 +32,10 @@ delay(1000); // wait for a second
 ### Experiment 2 - Traffic Light
 
 ![Traffic Light](assets/images/exp2.png)
+
+### Snapshots
+
+![Traffic Light](assets/simulation/exp2.jpg)
 #### Code
 ```ino
 int redled =10; // initialize digital pin 8.
@@ -62,6 +70,10 @@ digitalWrite(redled, LOW);// turn off red LED
 ### Experiment 3 - LED Chasing Effect
 
 ![image](assets/images/exp3.png)
+
+### Snapshots
+
+![image](assets/simulation/exp3.jpg)
 #### Code
 ```ino
 int BASE = 2 ;  // the I/O pin for the first LED
@@ -91,6 +103,10 @@ void loop()
 ### Experiment 4 - Button Controlled LED
 
 ![image](assets/images/exp4.png)
+
+### Snapshots
+
+![image](assets/simulation/exp4.jpg)
 #### Code
 ```ino
 int ledpin=11;// initialize pin 11
@@ -114,6 +130,10 @@ else
 ### Experiment 5 - Buzzer
 
 ![image](assets/images/exp5.png)
+
+### Snapshots
+
+![image](assets/simulation/exp5.jpg)
 #### Code
 ```ino
 int buzzer=8;// initialize digital IO pin that controls the buzzer
@@ -130,6 +150,10 @@ digitalWrite(buzzer, HIGH); // produce sound
 ### Experiment 6 - RGB LED
 
 ![image](assets/images/exp6.png)
+
+### Snapshots
+
+![image](assets/simulation/exp6.jpg)
 #### Code
 ```ino
 int redpin = 11; //select the pin for the red LED
@@ -165,6 +189,10 @@ for(val=0; val<255; val++)
 ### Experiment 7 - LDR Light Sensor
 
 ![image](assets/images/exp7.png)
+
+### Snapshots
+
+![image](assets/simulation/exp7.jpg)
 #### Code
 ```ino
 int potpin=0;// initialize analog pin 0, connected with photovaristor
@@ -188,6 +216,10 @@ delay(10);// wait for 0.01
 ### Experiment 8 - Flame Sensor
 
 ![image](assets/images/exp8.png)
+
+### Snapshots
+
+![image](assets/simulation/exp8.jpg)
 #### Code
 ```ino
 int flame=0;// select analog pin 0 for the sensor
@@ -217,6 +249,10 @@ void loop()
 ### Experiment 9 - LM35 Temperature Sensor
 
 ![image](assets/images/exp9.png)
+
+### Snapshots
+
+![image](assets/simulation/exp9.jpg)
 #### Code
 ```ino
 int potPin = 0; // initialize analog pin 0 for LM35 temperature sensor
@@ -240,6 +276,10 @@ delay(500);// wait for 0.5 second
 ### Experiment 10 - IR Remote Control using TSOP
 
 ![image](assets/images/exp10.png)
+
+### Snapshots
+
+![image](assets/simulation/exp10.jpg)
 #### Code
 ```ino
 #include <IRremote.h>
@@ -375,6 +415,10 @@ irrecv.resume(); // Receive the next value
 ### Experiment 11 - Potentiometer analog Value Reading
 
 ![image](assets/images/exp11.png)
+
+### Snapshots
+
+![image](assets/simulation/exp11.jpg)
 #### Code
 ```ino
 int potpin=0;// initialize analog pin 0
@@ -399,6 +443,10 @@ Serial.println(val);// display val’s value
 ### Experiment 12 - Segment Display
 
 ![image](assets/images/exp12.png)
+
+### Snapshots
+
+![image](assets/simulation/exp12.jpg)
 #### Code
 ```ino
 int a=7;// set digital pin 7 for segment a
