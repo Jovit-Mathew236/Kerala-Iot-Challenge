@@ -443,10 +443,6 @@ Serial.println(val);// display val’s value
 ### Experiment 12 - Segment Display
 
 ![image](assets/images/exp12.png)
-
-### Snapshots
-
-![image](assets/simulation/exp12.jpg)
 #### Code
 ```ino
 int a=7;// set digital pin 7 for segment a
