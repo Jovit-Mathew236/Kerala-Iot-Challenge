@@ -46,7 +46,7 @@ void loop()
 
 #### Circuit Diagram
 
-![sc_exp1](assets/images/exp1.jpg)
+![sc_exp1](assets/images/exp1.png)
 
 #### Simulation 
 
@@ -106,7 +106,7 @@ void loop()
 ```
 #### Circuit Diagram
 
-![sc_exp2](assets/images/exp2.jpg)
+![sc_exp2](assets/images/exp2.png)
 
 #### Simulation
 
@@ -154,7 +154,7 @@ void loop()
 ```
 ### Circuit Diagram
 
-![sc_exp3](assets/images/exp3.jpg)
+![sc_exp3](assets/images/exp3.png)
 
 ### Simulation 
 
@@ -200,7 +200,7 @@ void loop()
 ```
 ### Circuit Diagram
 
-![sc_exp4](assets/images/exp4.jpg)
+![sc_exp4](assets/images/exp4.png)
 
 ### Simulation 
 
@@ -234,7 +234,7 @@ digitalWrite(buzzer, HIGH); // produce sound
 ```
 ### Circuit Diagram
 
-![sc_exp5](assets/images/exp5.jpg)
+![sc_exp5](assets/images/exp5.png)
 
 ### Simulation 
 
@@ -287,7 +287,7 @@ for(val=0; val<255; val++)
 ```
 ### Circuit Diagram
 
-![sc_exp6](assets/images/exp6.jpg)
+![sc_exp6](assets/images/exp6.png)
 
 ### Simulation
 
