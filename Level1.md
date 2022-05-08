@@ -1,7 +1,7 @@
 
 
 ### About Me
-> Hey y'all,  I'm Jovit Mathew, a first year Electronics and Computer Engineering Undergraduate from [**St.Joseph's College of Engineering and Technology, Plaai**](https://sjcetpalai.ac.in/). I'm a beginner to the field of IoT. 
+> Hey y'all,  I'm Jovit Mathew, a first year Electronics and Computer Engineering Undergraduate from [**St.Joseph's College of Engineering and Technology, Palai**](https://sjcetpalai.ac.in/). I'm a beginner to the field of IoT. 
 
 ## Level 1:
 
