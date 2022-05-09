@@ -591,63 +591,89 @@ delay(1000); // wait for 1s
 
 ### **Assignment 1** - Automatic Night Lamp using LDR & LED
 
-![image](https://user-images.githubusercontent.com/44474792/132135947-e491a270-75d1-4671-bff1-b2c5e540ddaf.png)
+![image](assets/images/ASS1.png)
+![image](assets/simulation/Ass1.jpg)
 #### Code
 ```ino
-const int LED = 13;  
-const int LDR = A0;  
-
-void setup() {
-  Serial.begin(9600);
-  pinMode(LED, OUTPUT); 
-  pinMode(LDR, INPUT);   
+int potpin=0;// initialize analog pin 0, connected with photovaristor
+int ledpin13=13;// initialize digital pin 13, 
+int ledpin12=12;// initialize digital pin 12,
+int ledpin8=8;// initialize digital pin 11,
+int ledpin7=7;// initialize digital pin 10,
+int ledpin4=4;// initialize digital pin 9,
+int ledpin2=2;// initialize digital pin 8,
+int val=0;// initialize variable val
+void setup()
+{
+pinMode(ledpin13,OUTPUT);// set digital pin 13 as “output”
+pinMode(ledpin12,OUTPUT);// set digital pin 12 as “output”
+pinMode(ledpin8,OUTPUT);// set digital pin 11 as “output”
+pinMode(ledpin7,OUTPUT);// set digital pin 10 as “output”
+pinMode(ledpin4,OUTPUT);// set digital pin 9 as “output”
+pinMode(ledpin2,OUTPUT);// set digital pin 8 as “output”
+Serial.begin(9600);// set baud rate at “9600”
 }
-
 void loop()
 {
-  int ldrStatus = analogRead(LDR);  
-  if (ldrStatus <= 400) {
-    digitalWrite(LED, HIGH);               
-    Serial.println("Room is DARK - LED ON");
-  }
-  else {
-    digitalWrite(LED, LOW);         
-    Serial.println("Room is BRIGHT - LED OFF");
-    }
+val=analogRead(potpin);// read the value of the sensor and assign it to val
+Serial.println(val);// display the value of val
+analogWrite(ledpin13,val/5);//setUp brightness maximum value 255
+analogWrite(ledpin12,val/5);//setUp brightness maximum value 255
+analogWrite(ledpin8,val/5);//setUp brightness maximum value 255
+analogWrite(ledpin7,val/5);//setUp brightness maximum value 255
+analogWrite(ledpin4,val/5);//setUp brightness maximum value 255
+analogWrite(ledpin2,val/5);//setUp brightness maximum value 255  
+delay(10);// wait for 0.01 
 }
 ```
 
+## Simulation Video
+
+<iframe src="https://drive.google.com/file/d/0B6m34D8cFdpMZndKTlBRU0tmczg/preview" frameborder="0" allowfullscreen="true"> </iframe>
+
+
 ### **Assignment 2** - Digital Dice using 6 LEDs & 1 Push Button
 
-![image](https://user-images.githubusercontent.com/44474792/132137070-709c4008-857c-4ffd-91ae-92aabdb3a2e9.png)
+![image](assets/images/ASS2.png)
+![image](assets/simulation/Ass2.jpg)
 #### Code
 ```ino
-#define DEBUG 0
 
-int first = 2;
-int second = 3;
-int third = 4;
-int fourth = 5;
-int fifth = 6;
-int sixth = 7;
+// 6 consecutive digital pins for the LEDs
+int first = 8;
+int second = 9;
+int third = 10;
+int fourth = 11;
+int fifth = 12;
+int sixth = 13;
 
-int button = 12;
+// pin for the button switch
+int button = 2;
+// value to check state of button switch
 int pressed = 0;
 
 void setup() {
+  // set all LED pins to OUTPUT
   for (int i=first; i<=sixth; i++) {
     pinMode(i, OUTPUT);
   }
+  // set buttin pin to INPUT
   pinMode(button, INPUT);
+  
+  // initialize random seed by noise from analog pin 0 (should be unconnected)
   randomSeed(analogRead(0));
 
+  // if we're debugging, connect to serial 
   #ifdef DEBUG
-  Serial.begin(9600);
+    Serial.begin(9600);
   #endif
 
 }
 
 void buildUpTension() {
+  // light LEDs from left to right and back to build up tension
+  // while waiting for the dice to be thrown
+  // left to right
   for (int i=first; i<=sixth; i++) {
     if (i!=first) {
       digitalWrite(i-1, LOW);
@@ -655,6 +681,7 @@ void buildUpTension() {
     digitalWrite(i, HIGH);
     delay(100);
   }
+  // right to left
   for (int i=sixth; i>=first; i--) {
     if (i!=sixth) {
       digitalWrite(i+1, LOW);
@@ -665,26 +692,43 @@ void buildUpTension() {
 }
 
 void showNumber(int number) {
-  digitalWrite(first, HIGH);
-  if (number >= 2) {
+  if (number == 8){
+    digitalWrite(third, LOW);
+    digitalWrite(second, LOW);
+    digitalWrite(fourth, LOW);
+    digitalWrite(fifth, LOW); 
+    digitalWrite(sixth, LOW); 
+  }
+  if (number == 9) {
     digitalWrite(second, HIGH);
   }
-  if (number >= 3) {
-    digitalWrite(third, HIGH);    
+  if (number == 10) {
+    digitalWrite(third, HIGH);
+    digitalWrite(second, HIGH); 
   }
-  if (number >= 4) {
+  if (number == 11) {
+    digitalWrite(third, HIGH);
+    digitalWrite(second, HIGH);
     digitalWrite(fourth, HIGH);    
   }
-  if (number >= 5) {
+  if (number == 12) {
+    digitalWrite(third, HIGH);
+    digitalWrite(second, HIGH);
+    digitalWrite(fourth, HIGH);
     digitalWrite(fifth, HIGH);    
   }
-  if (number == 6) {
+  if (number == 13) {
+    digitalWrite(third, HIGH);
+    digitalWrite(second, HIGH);
+    digitalWrite(fourth, HIGH);
+    digitalWrite(fifth, HIGH); 
     digitalWrite(sixth, HIGH);    
   }
 }
 
 int throwDice() {
-  int randNumber = random(1,7);
+  // get a random number in the range [1,6]
+  int randNumber = random(7,14);
   
   #ifdef DEBUG
     Serial.println(randNumber);
@@ -700,9 +744,11 @@ void setAllLEDs(int value) {
 }
 
 void loop() {
+  // if button is pressed - throw the dice
   pressed = digitalRead(button);
 
   if (pressed == HIGH) {
+    // remove previous number
     setAllLEDs(LOW);
     
     buildUpTension();
@@ -712,6 +758,6 @@ void loop() {
 
 }
 ```
-## Simulation
+## Simulation Video
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/CpxH_lghoPY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe src="https://drive.google.com/file/d/0B6m34D8cFdpMZndKTlBRU0tmczg/preview" frameborder="0" allowfullscreen="true"> </iframe>
