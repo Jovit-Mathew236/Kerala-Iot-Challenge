@@ -627,10 +627,10 @@ delay(10);// wait for 0.01
 }
 ```
 
-## Simulation Video
+<!-- ## Simulation Video
 
 <iframe src="https://drive.google.com/file/d/0B6m34D8cFdpMZndKTlBRU0tmczg/preview" frameborder="0" allowfullscreen="true"> </iframe>
-
+ -->
 
 ### **Assignment 2** - Digital Dice using 6 LEDs & 1 Push Button
 
@@ -758,6 +758,6 @@ void loop() {
 
 }
 ```
-## Simulation Video
+<!-- ## Simulation Video
 
-<iframe src="https://drive.google.com/file/d/0B6m34D8cFdpMZndKTlBRU0tmczg/preview" frameborder="0" allowfullscreen="true"> </iframe>
+<iframe src="https://drive.google.com/file/d/0B6m34D8cFdpMZndKTlBRU0tmczg/preview" frameborder="0" allowfullscreen="true"> </iframe> -->
